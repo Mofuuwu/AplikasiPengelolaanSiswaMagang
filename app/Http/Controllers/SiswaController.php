@@ -22,7 +22,7 @@ class SiswaController extends Controller
      */
     public function create()
     {
-        //
+        return view('students.create');
     }
 
     /**
@@ -30,7 +30,27 @@ class SiswaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'nama' => 'required|max:255',
+            'nis' => 'required|digits:6',
+            'kelas' => 'required|max:255',
+            'jurusan' => 'required|max:255',
+            'namaSekolah' => 'required|max:255',
+            'nomorKontak' => 'required|max:255',
+            'alamat' => 'required|max:255'
+        ]);
+
+        $siswa = new Siswa();
+        $siswa->nama = $validatedData['nama'];
+        $siswa->nis = $validatedData['nis'];
+        $siswa->kelas = $validatedData['kelas'];
+        $siswa->jurusan = $validatedData['jurusan'];
+        $siswa->namaSekolah = $validatedData['namaSekolah'];
+        $siswa->nomorKontak = $validatedData['nomorKontak'];
+        $siswa->alamat = $validatedData['alamat'];
+        $siswa->save();
+
+        return redirect()->route('students.index')->with('success', 'siswa created successfully.');
     }
 
     /**
@@ -38,7 +58,7 @@ class SiswaController extends Controller
      */
     public function show(string $id)
     {
-        //
+        
     }
 
     /**
@@ -46,7 +66,8 @@ class SiswaController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $students = Siswa::findOrFail($id);
+        return view('students.edit', ['students' => $students]);
     }
 
     /**
@@ -54,7 +75,27 @@ class SiswaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validatedData = $request->validate([
+            'nama' => 'required|max:255',
+            'nis' => 'required|digits:6',
+            'kelas' => 'required|max:255',
+            'jurusan' => 'required|max:255',
+            'namaSekolah' => 'required|max:255',
+            'nomorKontak' => 'required|max:255',
+            'alamat' => 'required|max:255'
+        ]);
+
+        $siswa = Siswa::findOrFail($id);
+        $siswa->nama = $validatedData['nama'];
+        $siswa->nis = $validatedData['nis'];
+        $siswa->kelas = $validatedData['kelas'];
+        $siswa->jurusan = $validatedData['jurusan'];
+        $siswa->namaSekolah = $validatedData['namaSekolah'];
+        $siswa->nomorKontak = $validatedData['nomorKontak'];
+        $siswa->alamat = $validatedData['alamat'];
+        $siswa->save();
+
+        return redirect()->route('students.index')->with('success', 'siswa updated successfully.');
     }
 
     /**
@@ -62,6 +103,9 @@ class SiswaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $students = Siswa::findOrFail($id);
+        $students->delete(); // Menghapus data siswa
+
+        return redirect()->route('students.index')->with('success', 'Data siswa berhasil dihapus');
     }
 }
