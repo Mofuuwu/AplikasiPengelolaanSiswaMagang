@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Siswa Magang</b>',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -326,13 +326,74 @@ return [
             'icon' => 'fas fa-fw fa-home',
             'label_color' => 'success',
         ],
-        ['header' => 'Daftar Siswa'],
+        // ['header' => 'Daftar Siswa'],
         [
-            'text' => 'Siswa',
-            'url' => 'students',
-            'icon' => 'fas fa-fw fa-user-graduate',
-            'label_color' => 'success',
+            'text' => 'Universitas',
+            'icon' => 'fas fa-fw fa-university',
+            'submenu' => [
+                [
+                    'text' => 'Data Pembimbing',
+                    'url' => '#',
+                    'icon' => 'fas fa-fw fa-user-graduate',
+                    'label_color' => 'success',
+                ],
+                [
+                    'text' => 'Data Unit',
+                    'url' => 'workunits',
+                    'icon' => 'fas fa-fw fa-user-graduate',
+                    'label_color' => 'success',
+                ],
+                [
+                    'text' => 'Data Lokasi Penempatan',
+                    'url' => '#',
+                    'icon' => 'fas fa-fw fa-building',
+                    'label_color' => 'success',
+                ],
+            ]
         ],
+        [
+            'text' => 'Sekolah',
+            'icon' => 'fas fa-fw fa-school', 
+            'submenu' => [
+                [
+                    'text' => 'Data Sekolah',
+                    'url' => 'schools',
+                    'icon' => 'fas fa-fw fa-school',
+                    'label_color' => 'success',
+                ],
+                [
+                    'text' => 'Data Guru Pembimbing',
+                    'url' => '#',
+                    'icon' => 'fas fa-fw fa-chalkboard-teacher',
+                    'label_color' => 'success',
+                ],
+                
+                [
+                    'text' => 'Data Siswa',
+                    'url' => 'students',
+                    'icon' => 'fas fa-fw fa-user',
+                    'label_color' => 'success',
+                ],
+                [
+                    'text' => 'Data Jurusan',
+                    'url' => 'majors',
+                    'icon' => 'fas fa-fw fa-layer-group',
+                    'label_color' => 'success',
+                ],
+                ]
+            ],
+            [
+                'text' => 'User',
+                'icon' => 'fas fa-fw fa-user-circle',
+                'submenu' => [
+                    [
+                        'text' => 'Data User',
+                        'url' => '#',
+                        'icon' => 'fas fa-fw fa-user',
+                        'label_color' => 'success',
+                    ],
+                ]
+                ],
         // [
         //     'text' => 'multilevel',
         //     'icon' => 'fas fa-fw fa-share',

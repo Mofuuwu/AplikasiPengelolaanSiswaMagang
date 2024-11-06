@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\JurusanController;
+use App\Http\Controllers\SekolahController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\UnitKerjaController;
+use App\Models\Jurusan;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +22,8 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::resource('schools', SekolahController::class);
+Route::resource('workunits', UnitKerjaController::class);
+Route::resource('majors', JurusanController::class);
 Route::resource('students', SiswaController::class);
+
