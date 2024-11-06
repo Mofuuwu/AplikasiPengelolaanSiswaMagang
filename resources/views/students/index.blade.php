@@ -1,9 +1,11 @@
 @extends('adminlte::page')
-
 @section('title', 'Daftar Siswa')
+@push('css')
+    <link rel="stylesheet" href="css/style.css">
+@endpush
 
 @section('content_header')
-    <h1>Daftar Siswa Pkl</h1>
+    <h2 class="c-header">Daftar Siswa Pkl</h2>
 @stop
 
 @section('content')
