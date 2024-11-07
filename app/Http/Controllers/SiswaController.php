@@ -21,6 +21,7 @@ class SiswaController extends Controller
 
     public function store(Request $request)
     {
+        dd($request);
         $validatedData = $request->validate([
             'nama' => 'required|max:255',
             'nis' => 'required|digits:6',

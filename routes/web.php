@@ -5,7 +5,9 @@ use App\Http\Controllers\SekolahController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\UnitKerjaController;
-use App\Models\Jurusan;
+use App\Http\Controllers\LokasiPenempatanController;
+use App\Http\Controllers\PembimbingSekolahController;
+use App\Http\Controllers\PembimbingUniversitasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,5 +27,8 @@ Route::get('/', function () {
 Route::resource('schools', SekolahController::class);
 Route::resource('workunits', UnitKerjaController::class);
 Route::resource('majors', JurusanController::class);
+Route::resource('placementLocations', LokasiPenempatanController::class);
 Route::resource('students', SiswaController::class);
+Route::resource('schoolAdvisors', PembimbingSekolahController::class);
+Route::resource('universityAdvisors', PembimbingUniversitasController::class);
 

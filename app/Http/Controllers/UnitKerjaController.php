@@ -30,8 +30,8 @@ class UnitKerjaController extends Controller
     {
         
         $validatedData = $request->validate([
-            'namaUnit' => 'required|string|regex:/^[a-zA-Z\s]+$/',
-            'pimpinanUnit' => 'required|string|regex:/^[a-zA-Z\s]+$/',
+            'namaUnit' => 'required',
+            'pimpinanUnit' => 'required',
         ]);
         do {
             $randomId = random_int(100000, 999999);
@@ -71,8 +71,8 @@ class UnitKerjaController extends Controller
     public function update(Request $request, string $id)
     {
         $validatedData = $request->validate([
-            'namaUnit' => 'required|string|regex:/^[a-zA-Z\s]+$/',
-            'pimpinanUnit' => 'required|string|regex:/^[a-zA-Z\s]+$/',
+            'namaUnit' => 'required',
+            'pimpinanUnit' => 'required',
         ]);
 
         $UnitKerja = UnitKerja::findOrFail($id);

@@ -333,7 +333,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'Data Pembimbing',
-                    'url' => '#',
+                    'url' => 'universityAdvisors',
                     'icon' => 'fas fa-fw fa-user-graduate',
                     'label_color' => 'success',
                 ],
@@ -345,7 +345,7 @@ return [
                 ],
                 [
                     'text' => 'Data Lokasi Penempatan',
-                    'url' => '#',
+                    'url' => 'placementLocations',
                     'icon' => 'fas fa-fw fa-building',
                     'label_color' => 'success',
                 ],
@@ -363,7 +363,7 @@ return [
                 ],
                 [
                     'text' => 'Data Guru Pembimbing',
-                    'url' => '#',
+                    'url' => 'schoolAdvisors',
                     'icon' => 'fas fa-fw fa-chalkboard-teacher',
                     'label_color' => 'success',
                 ],
